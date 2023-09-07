@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         actualizarCarrito()
     }
 })
-//SEXTO PASO
+
 botonVaciar.addEventListener('click', () => {
     carrito.length = 0
     actualizarCarrito()
@@ -66,10 +66,73 @@ stockProductos.forEach((producto) => {
 
     boton.addEventListener('click', () => {
 
-        agregarAlCarrito(producto.id)
+        agregarAlCarrito(producto.id);
         //1
     })
 })
+
+function showBanner() {
+    const ofertaBanner = document.getElementById('oferta-banner');
+    const closeButton = document.createElement('button');
+    closeButton.className = 'close-button';
+    closeButton.textContent = 'X';
+    closeButton.addEventListener('click', () => {
+        hideBanner();
+    });
+
+    const bannerContent = document.getElementById('banner-content');
+    const offerDetails = {
+        nombre: 'Oferta Especial',
+        img: './img/Reme2.png',
+        desc: 'Solo por hoy!',
+        precio: '$1500'
+    };
+
+    while (bannerContent.firstChild) {
+        bannerContent.removeChild(bannerContent.firstChild);
+    }
+
+    const divDetails = document.createElement('div');
+    divDetails.className = 'banner-details';
+
+    const img = document.createElement('img');
+    img.src = offerDetails.img;
+    img.alt = offerDetails.nombre;
+    img.className = 'banner-image-small';
+
+    const h3 = document.createElement('h3');
+    h3.textContent = offerDetails.nombre;
+
+    const pDesc = document.createElement('p');
+    pDesc.textContent = offerDetails.desc;
+
+    const pPrice = document.createElement('p');
+    pPrice.className = 'offer-price';
+    pPrice.textContent = offerDetails.precio;
+
+    divDetails.appendChild(img);
+    divDetails.appendChild(h3);
+    divDetails.appendChild(pDesc);
+    divDetails.appendChild(pPrice);
+
+    bannerContent.appendChild(closeButton);
+    bannerContent.appendChild(divDetails);
+
+    ofertaBanner.classList.remove('oculto');
+
+    setTimeout(function () {
+        hideBanner();
+    }, 10000);
+}
+
+function hideBanner() {
+    const ofertaBanner = document.getElementById('oferta-banner');
+    ofertaBanner.classList.add('oculto');
+    const bannerContent = document.getElementById('banner-content');
+    while (bannerContent.firstChild) {
+        bannerContent.removeChild(bannerContent.firstChild);
+    }
+}
 
 filterObjects("all");
 
@@ -102,10 +165,7 @@ function removeClass(element, name) {
     let arr1, arr2;
     arr1 = element.className.split(" ");
     arr2 = name.split(" ");
-    /* console.log('valor de ARR1',arr1, 'valor de ARR2',arr2.lenght) */
     console.log(arr2.length, 'largo del arr2 en REMOVE')
-    /* console.log('ARR2 VALE: ', arr2,'ARR1 VALE: ', arr1) */
-
     if (arr1.indexOf(arr2[0]) > -1) {
         arr1.splice(arr1.indexOf(arr2[0]), 1);
         console.log('Se deberia haber elimnado show', arr1)
@@ -113,20 +173,6 @@ function removeClass(element, name) {
 
     element.className = arr1.join(" ");
     console.log('eliminando element class' + element.className);
-}
-
-function showBanner() {
-    const ofertaBanner = document.getElementById('oferta-banner');
-    ofertaBanner.classList.remove('oculto');
-
-    setTimeout(function () {
-        hideBanner();
-    }, 10000);
-}
-
-function hideBanner() {
-    const ofertaBanner = document.getElementById('oferta-banner');
-    ofertaBanner.classList.add('oculto');
 }
 
 
@@ -168,7 +214,7 @@ const crearCheckOut = () => {
     input.className = `form-control`;
     let label = d.createElement('label');
     label.for = 'firstName';
-    label.innerText = 'first Name'
+    label.innerText = 'Nombre'
 
     let divGridCol2 = d.createElement('div');
     divGridCol2.className = `col-md-6 mb-2`;
@@ -180,7 +226,7 @@ const crearCheckOut = () => {
     input2.className = `form-control`;
     let label2 = d.createElement('label');
     label2.for = 'lastName';
-    label2.innerText = 'Last Name'
+    label2.innerText = 'Apellido'
 
 
     divMd.append(input, label);
@@ -375,7 +421,6 @@ const crearCheckOut = () => {
     divTargetExp2.innerText = 'Security code required';
     divColExp2.append(labelExp2, inputExp2, divTargetExp2);
 
-    /* divRowTarget.append(divColExp, divColExp2); */
     divRowExp.append(divColExp, divColExp2)
 
 
@@ -384,7 +429,7 @@ const crearCheckOut = () => {
     buttonCheck.type = 'submit';
     buttonCheck.innerText = 'Comprar';
     buttonCheck.addEventListener('click', function () {
-        mensajeCompra.classList.remove('oculto');
+        mensajeCompra.classList.remove('oculte');
         resetearCarrito();
     })
 
@@ -455,13 +500,10 @@ const crearCheckOut = () => {
 document.getElementById("finalizar-compra").addEventListener("click", function (event) {
     event.preventDefault();
 
-    // Crea el checkout y obtén una referencia al elemento generado
     const checkoutSection = crearCheckOut();
 
-    // Obtén una referencia al contenedor actual
     const contenedorProductos = document.getElementById("contenedor-productos");
 
-    // Reemplaza el contenido del contenedor por el checkout
     contenedorProductos.replaceWith(checkoutSection);
 });
 
@@ -535,5 +577,3 @@ const resetearCarrito = () => {
     localStorage.removeItem('carrito');
     actualizarCarrito();
 };
-
-

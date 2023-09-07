@@ -9,32 +9,6 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-.banner {
-    position: fixed;
-    top: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #f5f5f5;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    z-index: 999;
-}
-
-.oculto {
-    display: none;
-}
-
-
-
-.oculto {
-    visibility: hidden;
-}
-
-
-
-
-
 
 #boton-carrito {
     border: none;
@@ -56,30 +30,6 @@ body {
 }
 
 
-/* .carrito-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-#boton-carrito {
-    padding-top: 5px;
-    padding-bottom: 15px;
-}
-
-#boton-carrito i {
-    font-size: 1.2rem;
-    margin-right: 5px;
-}
-
- */
-
-
-
-
-
-
-
 #mensaje-compra {
     background-color: #4CAF50;
     color: white;
@@ -88,6 +38,14 @@ body {
     font-weight: bold;
 }
 
+.oculte {
+    display: none;
+}
+
+
+.oculte {
+    visibility: hidden;
+} 
 
 .modal-buttons {
     display: flex;
@@ -96,8 +54,6 @@ body {
 .boton-agregar {
     background-color: #fb774b;
     color: white;
-    /* font-size: 18px;
-    font-weight: 700; */
     padding: 0.5rem;
     border: none;
     border-radius: 0.5rem;
@@ -114,8 +70,6 @@ body {
 .boton-finalizar {
     background-color: #222222;
     color: white;
-    /* font-size: 18px;
-    font-weight: 700; */
     padding: 0.5rem;
     border: none;
     border-radius: 0.5rem;
@@ -152,7 +106,6 @@ body {
 .modal-carrito {
     position: relative;
     background-color: white;
-    /* min-width: 500px; */
     padding: 20px;
     margin-top: -100%;
     border-radius: 1rem;
@@ -165,7 +118,6 @@ body {
 
 .modal-carrito h3 {
     color: #222222;
-    /* padding-bottom: 5px; */
     padding: 1rem;
 }
 
@@ -318,7 +270,6 @@ hr {
 
 }
 
-/* hola */
 
 .navbar-nav {
     display: flex;
@@ -343,7 +294,7 @@ hr {
     margin-right: 5px;
   }
 
-/* fin hola */
+
 .navbar span {
     color: black;
     font-size: 1.5rem;
@@ -376,32 +327,11 @@ hr {
     }
 }
 
-/* mobile nav */
+
 
 .navbar-light .navbar-toggler {
     border: none;
     outline: none;
-}
-
-
-#home {
-    background-image: url(imagenes/porta2.jpg);
-    width: 100%;
-    height: 100vh;
-    background-size: cover;
-    background-position: top center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-#home span {
-    color: #fff;
-}
-
-#home p {
-    color: #fff;
 }
 
 
@@ -411,74 +341,6 @@ hr {
     background-color: #fff;
 }
 
-#new .one img {
-    width: 100%;
-    height: 100%;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-
-}
-
-#new .one .details {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    transition: 0.3s ease;
-}
-
-#new .one:hover .details {
-    cursor: pointer;
-    background-color: rgba(245, 178, 178, 0.7);
-}
-
-
-#new .one .details button {
-    display: inline-block;
-    font-size: 14px;
-    font-weight: 500;
-    color: #2a2a2a;
-    background: none;
-    text-transform: uppercase;
-    border-bottom: 1px solid #2a2a2a;
-    padding: 2.5px;
-    transform: translateY(70px);
-    transition: 0.3s ease;
-}
-
-#new .one .details button:hover {
-    color: #fff;
-    border-bottom: 1px solid #fff;
-}
-
-#new .one:nth-child(1) .details {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: start;
-    padding-left: 15px;
-}
-
-#new .one:nth-child(2) .details {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-#new .one:nth-child(3) .details {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: flex-end;
-    text-align: end;
-    padding-right: 15px;
-}
 
 .product {
     cursor: pointer;
@@ -507,32 +369,6 @@ hr {
 }
 
 
-#banner {
-    background-image: url(imagenes/asd.jpg);
-    width: 100%;
-    height: 60vh;
-    background-size: cover;
-    background-position: top 70px center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-
-}
-
-#banner h4 {
-    color: #D8D8D8;
-}
-
-#banner h1 {
-    color: #fff;
-}
-
-#banner button {
-    color: #D8D8D8;
-}
 
 footer {
     background-color: #222222;
@@ -597,7 +433,6 @@ footer .copyright a:hover {
 }
 
 .store-wrapper {
-    /* display: flex; */
     flex-wrap: wrap;
 }
 
@@ -626,7 +461,7 @@ footer .copyright a:hover {
     background: #2D3E50;
 }
 
-/* PRODUCTOS ============*/
+
 
 .products {
     display: flex;
@@ -668,7 +503,7 @@ footer .copyright a:hover {
     text-decoration: none;
 }
 
-/* RESPONSIVE ================================*/
+
 
 @media screen and (max-width: 1100px) {
     .products-list .product-item {
@@ -704,6 +539,9 @@ footer .copyright a:hover {
 }
 
 @media screen and (max-width: 700px) {
+    .buttons {
+        flex-direction: column;
+    }
     .category_list {
         flex-direction: column;
     }
@@ -715,6 +553,7 @@ footer .copyright a:hover {
 }
 
 @media screen and (max-width: 600px) {
+
 
     .products-list .product-item {
         width: 47.5%;
@@ -765,4 +604,49 @@ footer .copyright a:hover {
 
 .shownt {
     display: none;
+}
+
+
+.banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.oculto {
+    transform: translateY(100%);
+}
+
+/* Estilos para los detalles de la oferta */
+.banner-details {
+    text-align: center;
+}
+
+.banner-image-small {
+    max-width: 20%;
+    height: auto;
+}
+
+.offer-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+/* Estilos para el botón "X" */
+.close-button {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 20px;
+    color: #333;
+    background: transparent;
+    border: none;
+    cursor: pointer;
 }
